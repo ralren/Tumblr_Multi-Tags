@@ -22,13 +22,17 @@ def results():
 def search_tumblr(search_tags):
 	search_tags = search_tags.split("+")
 	client = pytumblr.TumblrRestClient(config.TUMBLR_API)
-	posts = client.tagged(search_tags[0], limit=20)
 	matches = []
+	
+	for i in range(len(search_tags)):
+		posts = client.tagged(search_tags[search_tag])
 
-	#go through all the posts
-	for i in range(20):
-		#check if all the tags in search_tags is in 
-		if all(tag in posts[i]['tags'] for tag in search_tags):
-			#if so, put the url in matches
-				matches.append(posts[i]['post_url'])
+		#go through all the posts
+		for j in range(20):
+			#check if all the tags in search_tags is in 
+			if all(tag in posts[j]['tags'] for tag in search_tags):
+				#if so, put the url in matches
+					matches.append(posts[j]['post_url'])
+
+	matches = set(matches)			#make matches into a set to get rid of duplicates later
 	return matches
