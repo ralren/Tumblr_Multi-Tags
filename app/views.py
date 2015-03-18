@@ -25,7 +25,7 @@ def search_tumblr(search_tags):
 	matches = []
 	
 	for i in range(len(search_tags)):
-		posts = client.tagged(search_tags[search_tag])
+		posts = client.tagged(search_tags[i])
 
 		#go through all the posts
 		for j in range(20):
