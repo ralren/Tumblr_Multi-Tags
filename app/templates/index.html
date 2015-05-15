@@ -3,12 +3,25 @@
 {%import "bootstrap/fixes.html" as fixes %}
 
 {% block content %}
-	<div id="middle">
-		<h1>Tumblr Multi-Tags</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Tumblr Multi-Tags</h1>
+			</div>
+		</div>
 
-		<p>Find posts containing all the tags you search for. Simply separate each desired tag with "+" such as "dogs+cats" - notice no spaces!</p> 
+		<div class="row">
+			<div class="col-md-12">
+				<p>Find posts containing all the tags you search for. Simply separate each desired tag with <kbd>+</kbd> such as <kbd>dogs+cats</kbd> - notice no spaces!</p> 
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				{{ wtf.quick_form(form, form_type='inline', button_map={'submit': 'primary'}) }}
+			</div>
+		</div>
 	
-		{{ wtf.quick_form(form, form_type='inline', button_map={'submit': 'primary'}) }}
 	</div>
 
 {% endblock %}
@@ -18,33 +31,24 @@
 {{fixes.ie8()}}
 
 <style>
-	h1 {
+
+	.container-fluid {
+		position: fixed;
+		top: 40%;
+		text-align: center;
+		left: 20%;
+		right: 20%;
+	}
+
+	h1 p{
 		padding: 2%;
 	}
 	
 	body {
 		background-color: #35465c;
 		color: white;
-		text-align: center;
 	}
 
-	p {
-		padding-bottom: 2%;
-	}
-
-	.form-inline {
-		width: 100%;
-
-	}
-
-	#middle {
-		position: fixed;
-		top: 30%;
-		width: 75%;
-		left: 50%;
-		margin: 0 0 0 -37.5%;
-
-	}
 </style>
 
 {% endblock %}

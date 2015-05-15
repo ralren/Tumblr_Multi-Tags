@@ -2,11 +2,15 @@
 {%import "bootstrap/fixes.html" as fixes %}
 
 {% block content %}
-<div class="container">
-	<p>The following will link to posts with all those tags...</p>
+<div class="container-fluid">
+	<div class="col-md-12"><h2> Here's a list of links to posts with all of those tags:</h2></div>
+
+	<ul>
 	{% for match in matches %}
-	<p> <a href="{{ match }}">{{ match }}</a> /<p>
+
+			<li><a href="{{ match }}">{{ match }}</a></li>
 	{% endfor %}
+</ul>
 
 </div>
 {% endblock %}
@@ -15,12 +19,15 @@
 {{super()}}
 {{fixes.ie8()}}
 <style>
-body {
-	background-color: #35465c;
-	color: white;
-}
-a{
-	color: white;
-}
+
+	body {
+		background-color: #35465c;
+		color: #ffffff;
+	}
+
+	a {
+		color: #ffffff;
+		
+	}
 </style>
 {% endblock %}
