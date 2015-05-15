@@ -5,6 +5,7 @@ from .forms import SearchForm
 import pytumblr
 import config
 
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
@@ -34,5 +35,5 @@ def search_tumblr(search_tags):
 				#if so, put the url in matches
 					matches.append(posts[j]['post_url'])
 
-	matches = set(matches)			#make matches into a set to get rid of duplicates later
+	matches = set(matches)			#make matches into a set to get rid of duplicates
 	return matches

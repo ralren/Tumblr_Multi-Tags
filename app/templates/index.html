@@ -3,25 +3,48 @@
 {%import "bootstrap/fixes.html" as fixes %}
 
 {% block content %}
-<div class="container">
-	<div class="row">
-		<div class="col-md-4"></div>'
-		<div class="col-md-4"><h1>Tumblr Multi-Tags!</h1></div>
-		<div class="col-md-4"></div>
-  	</div>
+	<div id="middle">
+		<h1>Tumblr Multi-Tags</h1>
 
-  	<div class="row">
-		<div class="col-md-4"></div>'
-		<div class="col-md-4">  
-			{{ wtf.quick_form(form, form_type='inline', button_map={'submit': 'primary'}) }}
-		</div>
-		<div class="col-md-4"></div>
-  	</div>
+		<p>Find posts containing all the tags you search for. Simply separate each desired tag with "+" such as "dogs+cats" - notice no spaces!</p> 
+	
+		{{ wtf.quick_form(form, form_type='inline', button_map={'submit': 'primary'}) }}
+	</div>
 
-</div>
 {% endblock %}
 
 {% block head %}
 {{super()}}
 {{fixes.ie8()}}
+
+<style>
+	h1 {
+		padding: 2%;
+	}
+	
+	body {
+		background-color: #35465c;
+		color: white;
+		text-align: center;
+	}
+
+	p {
+		padding-bottom: 2%;
+	}
+
+	.form-inline {
+		width: 100%;
+
+	}
+
+	#middle {
+		position: fixed;
+		top: 30%;
+		width: 75%;
+		left: 50%;
+		margin: 0 0 0 -37.5%;
+
+	}
+</style>
+
 {% endblock %}
